@@ -12,4 +12,4 @@ jobs:
       - name: Display Information
         run: |
           echo "deploying backend"
-          cat ../../Backend/main.js
+          ls -l
