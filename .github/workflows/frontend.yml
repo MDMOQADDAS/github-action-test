@@ -1,0 +1,17 @@
+name: deploy_frontend
+
+on:
+  push:
+    branches:
+      - "master"
+    paths:
+      - "Frontend/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display Information
+        run: |
+          echo "deploying frontend"
+          cat ../../Frontend/index.html

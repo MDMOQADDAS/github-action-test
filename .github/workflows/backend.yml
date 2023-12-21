@@ -1,0 +1,17 @@
+name: deploy_backend
+
+on:
+  push:
+    branches:
+      - "master"
+    paths:
+      - "Backend/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display Information
+        run: |
+          echo "deploying backend"
+          cat ../../Backend/main.js
