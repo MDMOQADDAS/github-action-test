@@ -1,0 +1,22 @@
+name: Production Deployment
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "Infra/**"
+      - "Backend/**"
+      - "Frontend/**"
+jobs:
+  runs-on: ubuntu-latest
+
+  steps:
+      - name: Terraform Init
+        working-directory: ${{ env.TERRAFORM_WORKING_DIRECTORY }}
+        env:
+          BACKEND_RESOURCE_GROUP_NAME: ${{ secrets.BACKEND_RESOURCE_GROUP_NAME }}
+          BACKEND_STORAGE_ACCOUNT_NAME: ${{ secrets.BACKEND_STORAGE_ACCOUNT_NAME }}
+          BACKEND_STORAGE_CONTAINER_NAME: ${{ secrets.BACKEND_STORAGE_CONTAINER_NAME }}
+        run: |
+          terraform init 
