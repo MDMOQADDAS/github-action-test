@@ -27,10 +27,10 @@ jobs:
           -backend-config="resource_group_name=myrg" \
           -backend-config="storage_account_name=mystorage" \
           -backend-config="container_name=terraform" \
-         # -backend-config="subscription_id=${{}}" \
-         # -backend-config="tenant_id=${{}}" \
-         # -backend-config="client_id=${{}}" \
-         # -backend-config="client_secret=${{}}"
+          -backend-config="subscription_id=c5544545sfdsdfsd12" \
+          -backend-config="tenant_id=5s1f2sf1sdf2ds1" \
+          -backend-config="client_id=55131231412468" \
+          -backend-config="client_secret=asdfdsfscvsdsndfsd4fsd4f"
 
 # go to your storage account. Under Security + networking, select Access keys
 # -backend-config="access_key=${{secrete.access_key}}"
