@@ -16,4 +16,4 @@ jobs:
         run: |
           echo "deploying backend"
           echo "Secrete : ${{secrets.ABS}}"
-          echo "Env : ${{env.ABE}}"
+          echo "Env : ${{ABE}}"
