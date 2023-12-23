@@ -3,18 +3,19 @@ name: deploy_backend
 on:
   push:
     branches:
-      - "master"
+      - "main"  # Use "main" as the default branch
     paths:
       - "Backend/**"
-   
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Set environment variable
+        env:
+          MY_VAR: ${{ secrets.ABS }}  # Set environment variable after checkout
       - name: Display Information
         run: |
-          echo "deploying backend"
-          echo "Secrete : ${{secrets.ABS}}"
-          echo $ABE
-
+          echo "Deploying backend"
+          echo "Secret: $MY_VAR"  # Access environment variable using $MY_VAR
