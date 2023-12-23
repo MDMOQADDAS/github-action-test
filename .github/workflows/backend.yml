@@ -17,4 +17,4 @@ jobs:
           MY_VAR: ${{secrets.ABS}}
         run: |
           echo "Deploying backend"
-          echo "Secret: $MY_VAR"  
+          echo "Secret: $MY_VAR+123"  
