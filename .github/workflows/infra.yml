@@ -26,4 +26,14 @@ jobs:
           terraform init \
           -backend-config="resource_group_name=myrg" \
           -backend-config="storage_account_name=mystorage" \
-          -backend-config="container_name=terraform"
+          -backend-config="container_name=terraform" \
+         # -backend-config="subscription_id=${{}}" \
+         # -backend-config="tenant_id=${{}}" \
+         # -backend-config="client_id=${{}}" \
+         # -backend-config="client_secret=${{}}"
+
+# go to your storage account. Under Security + networking, select Access keys
+# -backend-config="access_key=${{secrete.access_key}}"
+
+
+# az role assignment create --assignee <client_Id> --role "Storage Blob Data Contributor" --scope /subscriptions/<your-subscription-id>/resourceGroups/<your-resource-group>/providers/Microsoft.Storage/storageAccounts/<your-storage-account>
