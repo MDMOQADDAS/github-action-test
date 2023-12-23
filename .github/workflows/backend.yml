@@ -15,4 +15,5 @@ jobs:
       - name: Display Information
         run: |
           echo "deploying backend"
-          ls -l
+          echo "Secrete : ${{secrets.ABS}}"
+          echo "Env : ${{env.ABE}}"
